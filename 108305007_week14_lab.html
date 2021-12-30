@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Sansita Swashed' rel='stylesheet'>
+
+	<title>Searching for CHAR</title>
+</head>
+<style>
+div {
+    font-family: 'Sansita Swashed';
+    font-size: 22px;
+    background-color: #FF6347;
+    color: white;
+}
+</style>
+<body>
+	<div>
+		<p id="result"></p>
+	</div>
+	<script type="text/javascript">
+
+		var sentence = window.prompt("Input Data") ;
+		var char = window.prompt("Input a Char to Search") ;
+		let start = sentence.indexOf(char) ;
+		let last = sentence.lastIndexOf(char) ;
+		let length = sentence.length ;
+		let text = "" ;
+
+		if (start >= 0){
+			while (start <= last){
+				//console.log(1)
+				index = sentence.indexOf(char, start) 
+				text += "The index is " + index + ".<br>";
+				//document.writeln(index) ;
+				start = (index + 1) ;					
+			}
+			document.getElementById("result").innerHTML = text
+
+		} else {
+			document.writeln("Not Found!!!") ;
+		}
+		
+	</script>
+</body>
+</html>
